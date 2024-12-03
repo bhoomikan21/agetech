@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FaVrCardboard } from 'react-icons/fa'
 import './App.css'
 
 function App() {
@@ -39,13 +40,34 @@ function App() {
 
   return (
     <div className="waitlist-container">
-      <h1>CogniVR</h1>
-      <h2>Enhance Your Cognitive Health Through Virtual Reality</h2>
+      <div className="logo-section">
+        <FaVrCardboard className="vr-icon" />
+        <h1>CogniVR</h1>
+      </div>
       
-      <div className="description">
-        <p>Join our waitlist for an innovative VR application designed for adults 65+ 
-          to improve cognitive function from the comfort of home.</p>
-        <p>Be the first to know when we launch!</p>
+      <h2>Enhance Cognitive Wellness with Virtual Reality</h2>
+      <p className="subtitle">A cutting-edge VR app designed to boost memory, focus, and mental agility for seniors.</p>
+      
+      <div className="info-sections-container">
+        <div className="features-section">
+          <h3>Features</h3>
+          <ul className="features-list">
+            <li><strong>Interactive Games</strong></li>
+            <li><strong>Therapeutic Environments</strong></li>
+            <li><strong>User-Friendly Interface</strong></li>
+            <li><strong>Multiplayer Options</strong></li>
+          </ul>
+        </div>
+
+        <div className="benefits-section">
+          <h3>Why Choose CogniVR?</h3>
+          <ul className="benefits-list">
+            <li><strong>Improve Memory and Attention</strong></li>
+            <li><strong>Reduce Stress and Anxiety</strong></li>
+            <li><strong>Enhance Social Interaction</strong></li>
+            <li><strong>Personalized Experience</strong></li>
+          </ul>
+        </div>
       </div>
 
       {!submitted ? (
@@ -59,13 +81,13 @@ function App() {
           />
           {error && <p className="error">{error}</p>}
           <button type="submit" className="submit-button">
-            Join Waitlist
+            Join Our Early Access List
           </button>
         </form>
       ) : (
         <div className="success-message">
-          <h3>Thank you for joining our waitlist!</h3>
-          <p>We'll keep you updated on our launch.</p>
+          <h3>Thank you for joining our early access list!</h3>
+          <p>We'll keep you updated on our launch and special offers for early adopters.</p>
         </div>
       )}
     </div>
